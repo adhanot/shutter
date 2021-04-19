@@ -1,8 +1,9 @@
 # Shutter
 
-shutter is a RESTful API to control my home Shutters. I use it with alexa. I can open, close and stop every shutter.
+Shutter is an API to control my home Shutters. I use it with alexa. I can open, close and stop every shutter.
 
 It use go-swagger (https://goswagger.io/), ENT Framework (https://entgo.io/) and JWT (https://github.com/dgrijalva/jwt-go).
+I use JWT authentification to secure my API requests. If you don't have a valid token you can't post on my shutters routes.
 
 shutter generate the client and the server. 
 
