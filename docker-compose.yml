@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  core:
+    build: .
+    volumes:
+      - ./:/app:z
+      - shutter_assets:/assets/shutter:z
+      - /dev/snd
+    ports:
+      - 5000:8080
+    env_file:
+      - ./.env
+    networks:
+      - shutter_core
+  database:
+    image: postgres:12
+    # volumes:
+    #         - shutter_database:/var/lib/postgresql/data:Z
+    environment:
+      POSTGRES_DATABASE: shutter
+      POSTGRES_USER: shutter
+      POSTGRES_PASSWORD: shutter
+    networks:
+      - shutter_core
+
+volumes:
+  shutter_database:
+  shutter_assets:
+
+networks:
+  shutter_core:
