@@ -1,10 +1,10 @@
-# hello-go-swagger
+# Shutter
 
-Hello-go-swagger is a Golang Template to build fast RESTful API by code generation. The complete stack creates a fast powerful and secure framework.
+shutter is a RESTful API to control my home Shutters. I use it with alexa.
 
 It use go-swagger (https://goswagger.io/), ENT Framework (https://entgo.io/) and JWT (https://github.com/dgrijalva/jwt-go).
 
-Hello-go-swagger generate the client and the server. 
+shutter generate the client and the server. 
 
 If you want modify the API go-swagger server, you need to modify the : 
 ```bash
@@ -27,15 +27,22 @@ docker-compose build --no-cache  && docker-compose up
 
 ## Usage
 
-Hello-go-swagger launch 3 API routes.
+shutter launch API routes.
 The routes are :
 ```bash
-http://0.0.0.0:8081/hello
-http://0.0.0.0:8081/register
-http://0.0.0.0:8081/login
-```
-You have a complete register and login authentification with JWT token and you have a "/home" route. You can only access on /home route with your JWT token. You need to be log before access to /home.
+http://0.0.0.0:5000/register
+http://0.0.0.0:5000/login
+http://0.0.0.0:5000/salon/open
+http://0.0.0.0:5000/salon/close
+http://0.0.0.0:5000/salon/stop
+http://0.0.0.0:5000/chambre/open
+http://0.0.0.0:5000/chambre/close
+http://0.0.0.0:5000/chambre/stop
+http://0.0.0.0:5000/sdb/open
+http://0.0.0.0:5000/sdb/close
+http://0.0.0.0:5000/sdb/stop
 
+```
 After modify the swagger.yaml or add new database schema, you just need go in the "scripts" folder and launch :
 ```bash
 sh generate.sh
@@ -44,5 +51,5 @@ sh generate.sh
 You can access on the documentation here :
 
 ```bash
-http://0.0.0.0:8081/v1/docs
+http://0.0.0.0:5000/v1/docs
 
